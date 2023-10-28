@@ -1,4 +1,3 @@
-import { table } from "console";
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
 export class CreateProducts1698415251936 implements MigrationInterface {
