@@ -4,7 +4,7 @@ import CreateUserService from "../typeorm/services/CreateUserService";
 
 export default class UsersController{
   public async index (req: Request, res: Response): Promise<Response>{
-    const listUser = new ListUserService;
+    const listUser = new ListUserService();
       
 
     const users = await listUser.execute();
