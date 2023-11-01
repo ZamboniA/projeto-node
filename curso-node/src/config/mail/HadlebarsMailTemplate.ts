@@ -1,6 +1,7 @@
-import handlebars from 'handlebars';
+import handlebars from "handlebars";
 
-interface ITemplateVariable {
+
+interface ITemplateVariable{
   [key: string]: string | number;
 }
 
@@ -9,11 +10,8 @@ interface IParseMailTemplate {
   variables: ITemplateVariable;
 }
 
-export default class handlebarsMailTemplate {
-  public async parse({
-    template,
-    variables,
-  }: IParseMailTemplate): Promise<string> {
+export default class HadlebarsMailTemplate{
+  public async parse( { template, variables }: IParseMailTemplate ): Promise<string> {
     const parseTemplate = handlebars.compile(template);
 
     return parseTemplate(variables);

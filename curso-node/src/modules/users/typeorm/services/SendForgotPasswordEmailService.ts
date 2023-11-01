@@ -11,6 +11,7 @@ interface IRequest{
 }
 
 
+
 class SendForgotPasswordEmailService {
   public async execute({ email }: IRequest): Promise<void> {
     const usersRepository = getCustomRepository(UsersRepository);
@@ -21,7 +22,6 @@ class SendForgotPasswordEmailService {
     }
 
     const token = await userTokensRepository.generate(user.id);
-    // console.log(token);
 
     await EtherealMail.sendMail({
       to: email,
